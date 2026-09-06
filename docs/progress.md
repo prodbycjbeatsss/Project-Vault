@@ -1,0 +1,34 @@
+# Progress Log
+
+## Initialization & Discovery Log
+- **Protocol 0 Initiated:**
+  - Initialized project memory files: `task_plan.md`, `findings.md`, `progress.md`, `gemini.md`.
+  - Consolidated architecture into `gemini.md` (law); removed `claude.md`.
+- **Phase 1 (Blueprint) Progress:**
+  - Captured North Star: Project Manager for music producers and YouTube creators (Main Video -> Metadata -> Multi-platform Sub-Content -> Calendar & Tasks).
+  - Defined JSON Data Schemas in `docs/gemini.md` for `Project`, `MainVideo`, `SubContent`, `Task`, and aggregate payloads.
+  - Benchmarked open-source tools (Plane, AppFlowy, Postiz, Mixpost).
+  - Executed all 8 implementation tasks in `docs/superpowers/plans/2026-09-04-creator-projectvault-core.md`.
+  - Applied user review refinements:
+    - TopBar: Removed status and platform filter pills, removed Mac `⌘ F` shortcut badge, centered the search input bar, and aligned heights/padding with the `+ New Project` button.
+  - Refined the **Projects Page**:
+    - Cleared all seed projects and folders for a clean slate.
+    - Added clean empty state under Folders: `"📁 Add your first folder"` with small `+ Add Folder` button.
+    - Created `NewFolderModal` allowing users to configure Folder Name, select an Icon (Folder, Music, Video, Package, Zap, Sparkles, Disc, Flame, Star, Tag, Headphones), and choose strictly from a curated Pastel Color Palette (Lavender, Sky Blue, Peach, Mint, Soft Coral, Lilac).
+    - Scaled down the project cards: reduced grid min-width to `260px`, banner height to `110px`, and compact padding/typography.
+    - Styled the empty folder placeholder card to match the create project placeholder card (centered 44px card with 📁 emoji, title, subtitle, and centered `+ Create Folder` button).
+    - Added interactive 3-dots action dropdown menu to each folder card with **Edit** and **Delete** options (with outside click dismiss and active card elevation).
+    - Added **Delete Warning Modal** (`DeleteWarningModal.jsx`) prompting confirmation with folder title warning and cancel/delete actions before permanently deleting a folder.
+    - Enhanced folder creation modal (`NewFolderModal.jsx`) to support full **Edit Folder** mode pre-populating folder name, icon, and pastel color palette.
+    - Renamed modal field from "Pastel Color" to "Folder Colour".
+    - Removed redundant inner action buttons ("Create Folder" & "Create Project") from the empty states on the Projects page.
+    - Standardized the "Add Folder" button styling into universal design class `.btn-main` in `global.css` (pill shape, identical padding, font size, border, hover, and colors) to serve as the template for all future action buttons.
+    - Updated `storage.js` with cascading updates: renaming a folder preserves all projects within that folder, and deleting a folder cleanly unassigns projects.
+  - **Phase 2 (Design Transition): Anthropic Scientific Field Journal Aesthetic:**
+    - Integrated official W3C Anthropic Design Tokens JSON at `src/tokens/tokens.json`.
+    - Rewrote `src/styles/variables.css` implementing all token custom properties: Ivory Medium canvas (`#f0eee6`), Ivory Light card surfaces (`#faf9f5`), Manilla featured paper tone (`#f5e3c7`), Oat Warm panels (`#e3dacc`), Slate Dark text (`#141413`), Stone hairline borders (`#cccbc8`), and single Clay terracotta CTA accent (`#d97757`).
+    - Loaded official typography pairing in `index.html`: `Source Serif 4` (editorial serif headings/body), `Inter` (UI chrome sans), and `JetBrains Mono` (producer specs & timestamps).
+    - Refactored all application stylesheets (`global.css`, `frame.css`, `sidebar.css`, `topbar.css`, `dashboard.css`, `projects.css`, `calendar.css`, `projectDetail.css`) to consume CSS custom properties directly.
+    - Added decisive primary CTA button `.btn-clay` for all key action moments (`New Project`, `Create Folder`, `Add Drop`, `Save Changes`), paired with `.btn-main` and persistent underline `.btn-link`.
+    - Updated modal palettes in `NewFolderModal.jsx` to warm archival paper tones (Oat, Manilla, Ivory, Terracotta Wash, Stone, Sage).
+    - Verified build passes with zero errors (`✓ built in 3.00s`) and live HMR at `http://localhost:3000`.

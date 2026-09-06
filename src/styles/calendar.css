@@ -1,0 +1,321 @@
+/* Calendar Page Header */
+.calendar-page-header {
+  margin-bottom: 24px;
+}
+
+.calendar-page-title {
+  font-family: var(--font-anthropic-serif);
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  color: var(--color-slate-dark);
+}
+
+.calendar-page-subtitle {
+  font-family: var(--font-anthropic-sans);
+  font-size: 14px;
+  color: var(--color-cloud-dark);
+  margin-top: 4px;
+}
+
+/* Month Switcher Bar */
+.month-switcher-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.month-pills-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.month-pill-btn {
+  padding: 6px 16px;
+  border-radius: var(--radius-buttons);
+  font-family: var(--font-anthropic-sans);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--color-cloud-dark);
+  background: var(--surface-card-surface);
+  border: 1px solid var(--color-stone);
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.month-pill-btn:hover {
+  background: var(--surface-deep-warm-surface);
+  color: var(--color-slate-dark);
+}
+
+.month-pill-btn.active {
+  background: var(--color-slate-dark);
+  color: #ffffff;
+  border-color: var(--color-slate-dark);
+  font-weight: 600;
+}
+
+.month-nav-arrow {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-card-surface);
+  border: 1px solid var(--color-stone);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-slate-dark);
+  flex-shrink: 0;
+}
+
+.month-nav-arrow:hover {
+  background: var(--surface-deep-warm-surface);
+}
+
+/* Day-by-Day Timeline Schedule */
+.timeline-schedule-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.day-timeline-row {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  gap: 20px;
+  align-items: flex-start;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--color-stone);
+}
+
+@media (max-width: 640px) {
+  .day-timeline-row {
+    grid-template-columns: 36px 1fr;
+    gap: 12px;
+  }
+}
+
+.day-indicator-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6px;
+}
+
+.day-number {
+  font-family: var(--font-anthropic-serif);
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-slate-dark);
+  line-height: 1;
+}
+
+.day-name {
+  font-family: var(--font-anthropic-sans);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-cloud-medium);
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+.day-events-track {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  min-height: 56px;
+  align-items: center;
+}
+
+.day-empty-label {
+  font-family: var(--font-anthropic-sans);
+  font-size: 13px;
+  color: var(--color-cloud-medium);
+  font-style: italic;
+  padding: 8px 0;
+}
+
+/* Event Drop Card */
+.event-drop-card {
+  border-radius: var(--radius-cards);
+  padding: 16px 20px;
+  min-width: 250px;
+  max-width: 340px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid var(--color-stone);
+  background: var(--surface-card-surface);
+  transition: transform 0.15s ease, border-color 0.15s ease;
+  cursor: pointer;
+}
+
+.event-drop-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-cloud-dark);
+}
+
+/* Platform-Specific Drop Card Theming */
+.event-drop-card.platform-youtube {
+  background: #fdf2f2;
+  border-color: #fca5a5;
+}
+.event-drop-card.platform-youtube:hover {
+  border-color: #f87171;
+  box-shadow: 0 4px 12px rgba(185, 28, 28, 0.08);
+}
+
+.event-drop-card.platform-youtube_shorts {
+  background: #fff1f2;
+  border-color: #fecdd3;
+}
+.event-drop-card.platform-youtube_shorts:hover {
+  border-color: #fb7185;
+  box-shadow: 0 4px 12px rgba(190, 18, 60, 0.08);
+}
+
+.event-drop-card.platform-tiktok {
+  background: #f0fdfa;
+  border-color: #99f6e4;
+}
+.event-drop-card.platform-tiktok:hover {
+  border-color: #2dd4bf;
+  box-shadow: 0 4px 12px rgba(0, 180, 200, 0.08);
+}
+
+.event-drop-card.platform-instagram_reels,
+.event-drop-card.platform-instagram_post {
+  background: #fdf2f8;
+  border-color: #fbcfe8;
+}
+.event-drop-card.platform-instagram_reels:hover,
+.event-drop-card.platform-instagram_post:hover {
+  border-color: #f472b6;
+  box-shadow: 0 4px 12px rgba(184, 29, 91, 0.08);
+}
+
+.event-drop-card.platform-soundcloud {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+.event-drop-card.platform-soundcloud:hover {
+  border-color: #fb923c;
+  box-shadow: 0 4px 12px rgba(180, 59, 2, 0.08);
+}
+
+.event-drop-card.platform-bandcamp {
+  background: #ecfeff;
+  border-color: #a5f3fc;
+}
+.event-drop-card.platform-bandcamp:hover {
+  border-color: #38bdf8;
+  box-shadow: 0 4px 12px rgba(14, 116, 144, 0.08);
+}
+
+.event-drop-card.platform-original {
+  background: #eef2ff;
+  border-color: #c7d2fe;
+}
+.event-drop-card.platform-original:hover {
+  border-color: #818cf8;
+  box-shadow: 0 4px 12px rgba(67, 56, 202, 0.08);
+}
+
+.event-drop-card.platform-other {
+  background: var(--surface-card-surface);
+  border-color: var(--color-stone);
+}
+
+/* Fallback Pastel aliases */
+.event-drop-card.lavender,
+.event-drop-card.blue {
+  background: var(--surface-card-surface);
+}
+
+.event-drop-card.peach,
+.event-drop-card.manilla {
+  background: var(--surface-warm-feature-surface);
+  border-color: #eec5c5;
+}
+
+.event-drop-card.coral,
+.event-drop-card.terracotta {
+  background: #f7e6e0;
+  border-color: #eed0c5;
+}
+
+.event-drop-card.mint,
+.event-drop-card.sage {
+  background: #e5eae3;
+  border-color: #ced6cc;
+}
+
+.event-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.event-platform-pill {
+  font-family: var(--font-anthropic-sans);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--surface-canvas);
+  border: 1px solid var(--color-stone);
+  color: var(--color-slate-dark);
+}
+
+.event-time-pill {
+  font-family: var(--font-anthropic-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--color-cloud-dark);
+}
+
+.event-card-title {
+  font-family: var(--font-anthropic-serif);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-slate-dark);
+  line-height: 1.35;
+  margin-bottom: 4px;
+}
+
+.event-parent-project {
+  font-family: var(--font-anthropic-sans);
+  font-size: 11.5px;
+  color: var(--color-cloud-dark);
+  margin-bottom: 12px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.event-card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-stone);
+}
+
+.event-status-pill {
+  font-family: var(--font-anthropic-sans);
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-canvas);
+  color: var(--color-slate-dark);
+  border: 1px solid var(--color-stone);
+}
